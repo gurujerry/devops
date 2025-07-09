@@ -1,0 +1,17 @@
+version: '3.7'
+
+services: 
+  web-01:
+    hostname: web-01
+    build:
+      context: .
+      dockerfile: Dockerfile.minion
+    depends_on:
+      - salt-master
+  db-01:
+    hostname: db-01
+    build:
+      context: .
+      dockerfile: Dockerfile.minion
+    depends_on:
+      - salt-master
